@@ -14,6 +14,9 @@ def fetch_epd_data(uuid: str):
 
     print(json.dumps(data, indent=4))
 
+# store JSON data in root directory
+    with open('epd_data.json', 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
 
 if __name__ == '__main__':
     epd_id = "8be9edb5-c5b9-4be1-bfb8-b096f24a183b"
